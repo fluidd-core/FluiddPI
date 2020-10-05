@@ -4,9 +4,9 @@ A pi image with Klipper, Moonraker and Fluidd pre-installed.
 This repository contains the necessary code to generate the distribution from an existing Raspbian lite distro image.
 
 ## Where to download?
-You can download the latest release [here](/cadriel/fluiddpi/releases/latest/download/fluiddpi.zip).
+You can download the latest release [here](https://github.com/cadriel/FluiddPI/releases/latest).
 
-Older releases can be found [here](/cadriel/fluiddpi/releases).
+Older releases can be found [here](https://github.com/cadriel/FluiddPI/releases).
 
 ## How to use?
 1. Download the image as per above and install on an sdcard like you would any other Raspberry pi image.
