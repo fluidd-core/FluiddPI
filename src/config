@@ -1,5 +1,8 @@
-export DIST_NAME=MainSailOS
-export DIST_VERSION=0.0.8
+export DIST_NAME=FluiddPI
+export DIST_VERSION=0.0.1
 export BASE_IMAGE_ENLARGEROOT=2000
 export BASE_IMAGE_RESIZEROOT=500
-export MODULES="base(network,raspicam,klipper_moonraker,mainsail,mjpgstreamer)"
+export BASE_RELEASE_IMG_NAME=fluiddpi-buster-lite-v0.0.1.img
+export BASE_IMG_NAME=fluiddpi-buster-lite-v0.0.1.img
+export BASE_RELEASE_ZIP_NAME=fluiddpi-buster-lite-v0.0.1
+export MODULES="base(network, raspicam, klipper_moonraker, fluidd, mjpgstreamer, password-for-sudo)"
