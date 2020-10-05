@@ -16,7 +16,7 @@ install_cleanup_trap
 
 unpack /filesystem/home/pi /home/pi pi
 
-echo "Mainsail"
+echo "Installing nginx and Mainsail"
 
 apt update
 apt install nginx -y
