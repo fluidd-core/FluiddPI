@@ -22,7 +22,7 @@ Older releases can be found [here](https://github.com/cadriel/FluiddPI/releases)
         - Optionally Change your hostname
 6. Reboot.
 
-Fluidd will be available at `http://fluidd.local` - and will present an error about a missing `printer.cfg` file.
+Fluidd will be available at `http://fluiddpi.local` - and will present an error about a missing `printer.cfg` file.
 You should now progress with standard klipper setup, upon which time Fluidd will begin working correctly.
 
 ## Compiling / Developing Quick Start
