@@ -5,5 +5,5 @@ qemu-system-arm -cpu arm1176 -m 256 \
   -no-reboot \
   -nographic \
   -append "dwc_otg.lpm_enable=0 root=/dev/sda2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait" \
-  -drive "file=src/workspace/fluiddpi-buster-lite-v0.0.6.img,index=0,media=disk,format=raw" \
+  -drive "file=src/workspace/fluiddpi-buster-lite-v0.0.7.img,index=0,media=disk,format=raw" \
   -net user,ipv4=on,ipv6=on,hostfwd=tcp::22222-:22,hostfwd=tcp::8888-:80 -net nic
