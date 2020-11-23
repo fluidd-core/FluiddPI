@@ -12,7 +12,7 @@ Older releases can be found [here](https://github.com/cadriel/FluiddPI/releases)
 1. Download the image as per above and install on an sdcard like you would any other Raspberry pi image.
 2. Optionally, if you require WiFi, configure by editing the `fluiddpi-wpa-supplicant.txt` on the root of the sd card - whilst it is still connected to your computer.
 3. Boot your Pi from the new sd card.
-4. Log into your Pi via SSH (located at fluidd.local). Default username is `pi` and password is `raspberry`.
+4. Log into your Pi via SSH (located at `fluiddpi.local`). Default username is `pi` and password is `raspberry`.
 5. Best practice would have you;
     - `sudo apt-get update`
     - `sudo apt-get upgrade`
