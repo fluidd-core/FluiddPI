@@ -1,5 +1,5 @@
 export DIST_NAME=FluiddPI
-export DIST_VERSION=0.0.6
+export DIST_VERSION=0.1.0
 export BASE_IMAGE_ENLARGEROOT=2000
 export BASE_IMAGE_RESIZEROOT=500
 export BASE_RELEASE_IMG_NAME=fluiddpi-raspios-lite-latest.img
