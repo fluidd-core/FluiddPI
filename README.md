@@ -24,7 +24,7 @@ Older releases can be found [here](https://github.com/cadriel/FluiddPI/releases)
 
 Fluidd will be available at `http://fluiddpi.local` - and will present an error about a missing `printer.cfg` file.
 
-Please ensure your `printer.cfg` is configured correctly for Fluidd, see the docs [here](https://github.com/cadriel/fluidd/blob/develop/docs/printer-setup-and-macros.md). Once this is complete, you can now progress with your standard printer setup.
+Please ensure your `printer.cfg` is configured correctly for Fluidd, see the fluidd docs [here](https://github.com/cadriel/fluidd/blob/develop/docs). Once this is complete, you can now progress with your standard printer setup.
 
 ## Compiling / Developing Quick Start
 Regular users of FluiddPI should **not** need to follow any of these steps. This is
