@@ -9,8 +9,8 @@ git clone https://github.com/guysoft/CustomPiOS.git
 git clone https://github.com/cadriel/FluiddPI.git
 cd FluiddPI/src/image
 wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
-cd ../../../
-cd CustomPiOS/src/update-custompios-paths
+cd ..
+../../CustomPiOS/src/update-custompios-paths
 sudo modprobe loop
 sudo bash -x ./build_dist
 ```
