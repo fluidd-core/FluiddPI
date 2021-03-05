@@ -23,6 +23,9 @@ server {
     # disable max upload size checks
     client_max_body_size 0;
 
+    # disable proxy request buffering
+    proxy_request_buffering off;
+
     location / {
         try_files $uri $uri/ /index.html;
     }
