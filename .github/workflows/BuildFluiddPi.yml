@@ -8,6 +8,8 @@ on:
   pull_request:
     types: [ opened, edited ]
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   raspiosbuild:
