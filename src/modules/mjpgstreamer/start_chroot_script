@@ -18,8 +18,9 @@ unpack /filesystem/boot /boot
 
 WEBCAM_USER=webcam
 
-apt update
-apt install -y --allow-downgrades git cmake=3.13.4-1 cmake-data=3.13.4-1
+apt-get update
+apt-get -y --force-yes install git cmake=3.13.4-1 cmake-data=3.13.4-1
+
 cd /home/pi
   #mjpg-streamer
   if [ "$MJPGSTREAMER_INCLUDE_MJPGSTREAMER" == "yes" ]
