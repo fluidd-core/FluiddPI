@@ -1,4 +1,4 @@
-name: Build and Release MainsailOS - RapsiOS
+name: Build and Release FluiddPI - RapsiOS
 on:
   release:
     types: [ published ]
@@ -17,7 +17,7 @@ jobs:
           repository: 'guysoft/CustomPiOS'
           path: CustomPiOS
       
-      - name: Checkout MainsailOS Project
+      - name: Checkout FluiddPI Project
         uses: actions/checkout@v2
         with:
           repository: ${{ github.repository }}
@@ -34,15 +34,15 @@ jobs:
         run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
       - name: Copy output image
-        run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img mainsailos-raspios-lite-latest.img
+        run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img fluiddpi-raspios-lite-latest.img
       
       - name: Compress the image
-        run: zip mainsailos-raspios-lite-latest.zip mainsailos-raspios-lite-latest.img
+        run: zip fluiddpi-raspios-lite-latest.zip fluiddpi-raspios-lite-latest.img
 
       - uses: actions/upload-artifact@v1
         with:
-          name: mainsailos-raspios-lite-latest.zip
-          path: mainsailos-raspios-lite-latest.zip
+          name: fluiddpi-raspios-lite-latest.zip
+          path: fluiddpi-raspios-lite-latest.zip
 
       - name: Upload RaspiOS Asset
         uses: actions/upload-release-asset@v1
@@ -50,6 +50,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: mainsailos-raspios-lite-latest.zip
-          asset_name: mainsailos-rpi-lite-${{ github.event.release.tag_name }}.zip
+          asset_path: fluiddpi-raspios-lite-latest.zip
+          asset_name: fluiddpi-rpi-lite-${{ github.event.release.tag_name }}.zip
           asset_content_type: application/zip

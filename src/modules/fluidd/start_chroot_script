@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# Fluidd installation script
+# Installs Fluidd and nginx
+# Originally Written by Raymond Himle
+# With contributions from Meteyou and Cadriel
+# With thanks to KevinOConnor & Arksine
+# GPL V3
+########
+
+
+# Source error handling, leave this in place
+set -x
+set -e
+
+source /common.sh
+install_cleanup_trap
+
+unpack /filesystem/home/pi /home/pi pi
+
+echo "Installing Fluidd"
+
+apt update
+apt install nginx -y
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/fluidd /etc/nginx/sites-enabled/
+cd /home/pi/
+[ ! -d /home/pi/gcode_files ] && su -c "mkdir /home/pi/gcode_files" - pi
+su -c "mkdir /home/pi/fluidd" - pi
+su -c "wget -q -O fluidd.zip https://github.com/cadriel/fluidd/releases/latest/download/fluidd.zip" - pi
+su -c "unzip fluidd.zip -d /home/pi/fluidd" - pi
+rm /home/pi/fluidd.zip
+
+# link logfiles to klipper_logs
+ln -s /var/log/nginx/fluidd-access.log /home/pi/klipper_logs/
+ln -s /var/log/nginx/fluidd-error.log /home/pi/klipper_logs/
+
+# Run installation steps defined above
+
+# Unpack root at the end, so files are modified before
+unpack /filesystem/root /

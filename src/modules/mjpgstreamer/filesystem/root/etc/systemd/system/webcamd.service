@@ -1,6 +1,6 @@
 
 [Unit]
-Description=the MainsailOS webcam daemon (based on OctoPi) with the user specified config
+Description=the FluiddPI webcam daemon (based on OctoPi) with the user specified config
 
 [Service]
 WorkingDirectory=/usr/local/bin

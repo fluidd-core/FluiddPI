@@ -1,4 +1,4 @@
-name: Build MainsailOS - RapsiOS
+name: Build FluiddPI - RapsiOS
 on:
   push:
     branches:
@@ -7,6 +7,9 @@ on:
       - '**'
   pull_request:
     types: [ opened, edited ]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   raspiosbuild:
@@ -22,7 +25,7 @@ jobs:
           repository: 'guysoft/CustomPiOS'
           path: CustomPiOS
       
-      - name: Checkout MainsailOS Project
+      - name: Checkout FluiddPI Project
         uses: actions/checkout@v2
         with:
           repository: ${{ github.repository }}
@@ -39,12 +42,12 @@ jobs:
         run: sudo modprobe loop && cd repository/src && sudo bash -x ./build_dist
 
       - name: Copy output image
-        run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img mainsailos-raspios-lite-latest.img
+        run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img fluiddpi-raspios-lite-latest.img
       
       - name: Compress the image
-        run: zip mainsailos-raspios-lite-latest.zip mainsailos-raspios-lite-latest.img
+        run: zip fluiddpi-raspios-lite-latest.zip fluiddpi-raspios-lite-latest.img
 
       - uses: actions/upload-artifact@v1
         with:
-          name: mainsailos-raspios-lite-latest.zip
-          path: mainsailos-raspios-lite-latest.zip
+          name: fluiddpi-raspios-lite-latest.zip
+          path: fluiddpi-raspios-lite-latest.zip

@@ -2,7 +2,7 @@ all: build
 
 build: verifyimage
 	docker-compose up -d
-	docker exec -it mainsailos-build build
+	docker exec -it fluiddpi-build build
 	docker-compose down
 
 verifyimage:
