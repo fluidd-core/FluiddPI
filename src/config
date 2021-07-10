@@ -1,5 +1,9 @@
+#!/usr/bin/env bash
+
 export DIST_NAME=FluiddPI
 export DIST_VERSION=0.4.0
 export BASE_IMAGE_ENLARGEROOT=2500
-export BASE_IMAGE_RESIZEROOT=500
 export MODULES="base(network,raspicam,klipper,moonraker,fluidd,mjpgstreamer,password-for-sudo)"
+
+export BASE_IMAGE_RESIZEROOT=500
+export BASE_RELEASE_COMPRESS=yes

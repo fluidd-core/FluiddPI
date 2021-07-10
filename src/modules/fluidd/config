@@ -1,1 +1,2 @@
-FLUIDD_VAR="This is a module variable"
+[ -n "$FLUIDD_DEPS" ] || FLUIDD_DEPS="nginx"
+[ -n "FLUIDD_URL" ] || FLUIDD_URL="https://github.com/cadriel/fluidd/releases/latest/download/fluidd.zip"

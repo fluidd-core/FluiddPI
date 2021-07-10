@@ -1,40 +1,45 @@
 #!/usr/bin/env bash
 # Fluidd installation script
 # Installs Fluidd and nginx
-# Originally Written by Raymond Himle
-# With contributions from Meteyou and Cadriel
-# With thanks to KevinOConnor & Arksine
+# Written by Raymond Himle
+# Thanks to meteyou
+# Revamped by KwadFan
 # GPL V3
 ########
 
 
 # Source error handling, leave this in place
-set -x
-set -e
+set -xe
 
+# Source CustomPIOS common.sh
 source /common.sh
 install_cleanup_trap
 
+### Install fluidd.cfg
 unpack /filesystem/home/pi /home/pi pi
 
-echo "Installing Fluidd"
+echo_green "Installing Fluidd Webfrontend ..."
 
-apt update
-apt install nginx -y
+### install all deps at once for time consumption reasons.
+## APT: Update Repo Database and install Dependencies
+
+apt update && apt install ${FLUIDD_DEPS} -y
+
+### Preparing nginx
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/fluidd /etc/nginx/sites-enabled/
-cd /home/pi/
-[ ! -d /home/pi/gcode_files ] && su -c "mkdir /home/pi/gcode_files" - pi
-su -c "mkdir /home/pi/fluidd" - pi
-su -c "wget -q -O fluidd.zip https://github.com/cadriel/fluidd/releases/latest/download/fluidd.zip" - pi
-su -c "unzip fluidd.zip -d /home/pi/fluidd" - pi
-rm /home/pi/fluidd.zip
 
-# link logfiles to klipper_logs
+### Download and Install Fluidd Web Frontend
+pushd /home/${BASE_USER}
+sudo -u ${BASE_USER} wget -q --show-progress -O fluidd.zip "${FLUIDD_URL}"
+sudo -u ${BASE_USER} unzip fluidd.zip -d /home/pi/fluidd
+## cleanup
+rm /home/pi/fluidd.zip
+popd
+
+### Link logfiles to klipper_logs
 ln -s /var/log/nginx/fluidd-access.log /home/pi/klipper_logs/
 ln -s /var/log/nginx/fluidd-error.log /home/pi/klipper_logs/
-
-# Run installation steps defined above
 
 # Unpack root at the end, so files are modified before
 unpack /filesystem/root /
