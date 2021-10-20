@@ -69,7 +69,7 @@
 # Current working directory is the mjpg-streamer base directory.
 #
 #camera_http_webroot="./www-fluidd"
-#camera_http_options="-n"
+camera_http_options="-n -l 127.0.0.1"
 
 ### EXPERIMENTAL
 # Support for different streamer types.

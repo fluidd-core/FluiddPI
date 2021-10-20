@@ -1,0 +1,28 @@
+# If we receive X-Forwarded-Proto, pass it through; otherwise, pass along the
+# scheme used to connect to this server
+map $http_x_forwarded_proto $proxy_x_forwarded_proto {
+  default $http_x_forwarded_proto;
+  ''      $scheme;
+}
+# If we receive Upgrade, set Connection to "upgrade"; otherwise, delete any
+# Connection header that may have been passed to this server
+map $http_upgrade $proxy_connection {
+  default upgrade;
+  '' close;
+}
+
+## Enable default site
+#server {
+#  server_name _; # This is just an invalid value which will never trigger on a real hostname.
+#  listen 80;
+#  access_log /var/log/nginx/access.log vhost;
+#  return 503;
+#}
+#server {
+#  server_name _; # This is just an invalid value which will never trigger on a real hostname.
+#  listen 443 ssl http2;
+#  access_log /var/log/nginx/access.log vhost;
+#  return 503;
+#  ssl_certificate /etc/nginx/certs/default.crt;
+#  ssl_certificate_key /etc/nginx/certs/default.key;
+#}
