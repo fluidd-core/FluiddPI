@@ -31,8 +31,8 @@ su -c "unzip fluidd.zip -d /home/pi/fluidd" - pi
 rm /home/pi/fluidd.zip
 
 # link logfiles to klipper_logs
-ln -s /var/log/nginx/fluidd-access.log /home/pi/klipper_logs/
-ln -s /var/log/nginx/fluidd-error.log /home/pi/klipper_logs/
+ln -s /var/log/nginx/fluidd-access.log /var/log/klipper/
+ln -s /var/log/nginx/fluidd-error.log /var/log/klipper/
 
 # Run installation steps defined above
 
