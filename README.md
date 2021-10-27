@@ -6,9 +6,9 @@ This repository contains the necessary code to generate the distribution from an
 
 ## Where to download?
 
-You can download the latest release [here](https://github.com/cadriel/FluiddPI/releases/latest).
+You can download the latest release [here](https://github.com/fluidd-core/FluiddPI/releases/latest).
 
-Older releases can be found [here](https://github.com/cadriel/FluiddPI/releases).
+Older releases can be found [here](https://github.com/fluidd-core/FluiddPI/releases).
 
 ## How to use?
 
@@ -60,7 +60,7 @@ git p7zip-full python3 curl
 
 ```bash
 # To build;
-git clone https://github.com/cadriel/FluiddPI.git
+git clone https://github.com/fluidd-core/FluiddPI.git
 cd FluiddPI/
 make build
 ```

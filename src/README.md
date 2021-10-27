@@ -4,7 +4,7 @@ FluiddPI can be built from Debian, Ubuntu, Raspbian, OctoPi, or even FluiddPI. B
 sudo apt-get install gawk util-linux qemu-user-static git p7zip-full python3
 
 git clone https://github.com/guysoft/CustomPiOS.git
-git clone https://github.com/cadriel/FluiddPI.git
+git clone https://github.com/fluidd-core/FluiddPI.git
 cd FluiddPI/src/image
 wget -c --trust-server-names 'https://downloads.raspberrypi.org/raspios_lite_armhf_latest'
 cd ..
