@@ -27,7 +27,7 @@ ln -s /etc/nginx/sites-available/fluidd /etc/nginx/sites-enabled/fluidd
 cd /home/pi/
 [ ! -d /home/pi/gcode_files ] && su -c "mkdir /home/pi/gcode_files" - pi
 su -c "mkdir /home/pi/fluidd" - pi
-su -c "wget -q -O fluidd.zip https://github.com/cadriel/fluidd/releases/latest/download/fluidd.zip" - pi
+su -c "wget -q -O fluidd.zip https://github.com/fluidd-core/fluidd/releases/latest/download/fluidd.zip" - pi
 su -c "unzip fluidd.zip -d /home/pi/fluidd" - pi
 rm /home/pi/fluidd.zip
 
