@@ -1,5 +1,5 @@
-Build FluiddPI From within FluiddPI / OctoPi / Raspbian / Debian / Ubuntu
-FluiddPI can be built from Debian, Ubuntu, Raspbian, OctoPi, or even FluiddPI. Build requires about 5 GB of free space available. You can build it by issuing the following commands:
+Build FluiddPI From within FluiddPI / OctoPi / Raspberry Pi OS / Debian / Ubuntu
+FluiddPI can be built from Debian, Ubuntu, Raspberry Pi OS, OctoPi, or even FluiddPI. Build requires about 5 GB of free space available. You can build it by issuing the following commands:
 
 sudo apt-get install gawk util-linux qemu-user-static git p7zip-full python3
 
