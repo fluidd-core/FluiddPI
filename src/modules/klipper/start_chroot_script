@@ -22,7 +22,7 @@ apt update
 apt install wget git gpiod -y
 
 # Packages for python cffi
-apt install python-virtualenv virtualenv python-dev libffi-dev build-essential -y
+apt install virtualenv python-dev libffi-dev build-essential -y
 
 # kconfig requirements
 apt install libncurses-dev -y
