@@ -33,7 +33,7 @@ apt install libusb-dev -y
 # AVR chip installation and building
 apt install avrdude gcc-avr binutils-avr avr-libc -y
 apt install stm32flash dfu-util libnewlib-arm-none-eabi -y
-apt install gcc-arm-none-eabi binutils-arm-none-eabi libusb-1.0 -y
+apt install gcc-arm-none-eabi binutils-arm-none-eabi libusb-1.0-0 -y
 
 #Make sure user pi has access to serial ports
 usermod -a -G tty pi
