@@ -16,7 +16,7 @@ jobs:
         with:
           repository: 'guysoft/CustomPiOS'
           path: CustomPiOS
-      
+
       - name: Checkout FluiddPI Project
         uses: actions/checkout@v2
         with:
@@ -24,9 +24,9 @@ jobs:
           path: repository
           submodules: true
 
-      - name: Download Raspbian Source Image
+      - name: Download Raspberry Pi OS Source Image
         run: aria2c -d repository/src/image/ --seed-time=0 https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent
-      
+
       - name: Update CustomPiOS Paths
         run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
 
@@ -35,7 +35,7 @@ jobs:
 
       - name: Copy output image
         run: cp ${{ github.workspace }}/repository/src/workspace/*-raspios-*-lite.img fluiddpi-raspios-lite-latest.img
-      
+
       - name: Compress the image
         run: zip fluiddpi-raspios-lite-latest.zip fluiddpi-raspios-lite-latest.img
 

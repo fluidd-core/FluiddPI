@@ -2,7 +2,7 @@
 
 A pi image with Klipper, Moonraker and Fluidd pre-installed.
 
-This repository contains the necessary code to generate the distribution from an existing Raspbian lite distro image.
+This repository contains the necessary code to generate the distribution from an existing Raspberry Pi OS lite distro image.
 
 ## Where to download?
 
@@ -44,8 +44,6 @@ Recommended environment is Ubuntu or similar, with docker and docker-compose ins
 - [docker](https://docs.docker.com/engine/install/ubuntu/)
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [qemu-arm-static](http://packages.debian.org/sid/qemu-user-static)
-- [CustomPiOS](https://github.com/guysoft/CustomPiOS)
-- [Downloaded Raspbian Image](http://www.raspbian.org/)
 - QEMU for emulation
 - around ~5gb free space
 
@@ -86,7 +84,7 @@ make distclean
 ```bash
 fluiddpi/
   /emulation - Contains dependencies for emulation testing
-  /src/image - Contains our base raspbian image
+  /src/image - Contains our base Raspberry Pi OS image
   /src/workspace - Created during build, and output for compiled images
 ```
 
