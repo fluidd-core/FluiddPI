@@ -11,6 +11,6 @@ WantedBy=multi-user.target
 Type=simple
 User=pi
 RemainAfterExit=yes
-ExecStart=/home/pi/moonraker-env/bin/python /home/pi/moonraker/moonraker/moonraker.py -c /home/pi/klipper_config/moonraker.conf -l /home/pi/klipper_logs/moonraker.log
+ExecStart=/home/pi/moonraker-env/bin/python /home/pi/moonraker/moonraker/moonraker.py -c /home/pi/klipper_config/moonraker.conf -l /var/log/klipper/moonraker.log
 Restart=always
 RestartSec=10
