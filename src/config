@@ -2,7 +2,4 @@ export DIST_NAME=FluiddPI
 export DIST_VERSION=0.4.0
 export BASE_IMAGE_ENLARGEROOT=2500
 export BASE_IMAGE_RESIZEROOT=500
-export BASE_ADD_USER=yes
-export BASE_USER=pi
-export BASE_USER_PASSWORD=raspberry
 export MODULES="base,releaseinfochange(network,raspicam,klipper,moonraker,fluidd,mjpgstreamer,password-for-sudo)"
