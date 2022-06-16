@@ -23,7 +23,7 @@ apt update
 apt install wget git gpiod -y
 
 # Packages for python and moonraker requirements
-apt install python3-virtualenv python3-dev nginx libopenjp2-7 python3-libgpiod liblmdb0 rsync zlib1g-dev -y
+apt install python3-virtualenv python3-dev libopenjp2-7 python3-libgpiod curl libcurl4-openssl-dev libssl-dev liblmdb-dev libsodium-dev zlib1g-dev libjpeg-dev packagekit -y
 
 # clone moonraker repo
 cd /home/pi
