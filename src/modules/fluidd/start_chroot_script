@@ -22,7 +22,8 @@ echo "Installing Fluidd"
 apt update
 apt install nginx -y
 rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/fluidd /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/fluidd /etc/nginx/sites-enabled/fluidd
 cd /home/pi/
 [ ! -d /home/pi/gcode_files ] && su -c "mkdir /home/pi/gcode_files" - pi
 su -c "mkdir /home/pi/fluidd" - pi
