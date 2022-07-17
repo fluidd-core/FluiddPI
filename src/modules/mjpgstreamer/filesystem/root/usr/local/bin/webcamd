@@ -147,7 +147,7 @@ function runMjpgStreamer {
     fi
 
     pushd $MJPGSTREAMER_HOME > /dev/null 2>&1
-        echo Running ./mjpg_streamer -o "output_http.so -w $camera_http_webroot $camera_http_options" -i "$input"
+        echo Running ./mjpg_streamer -o \"output_http.so -w $camera_http_webroot $camera_http_options\" -i \"$input\"
         LD_LIBRARY_PATH=. ./mjpg_streamer -o "output_http.so -w $camera_http_webroot $camera_http_options" -i "$input" &
         sleep 1 &
         sleep_pid=$!
