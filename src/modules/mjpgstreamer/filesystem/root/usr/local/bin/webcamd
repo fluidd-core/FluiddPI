@@ -13,7 +13,7 @@
 
 MJPGSTREAMER_HOME=/home/pi/mjpg-streamer
 MJPGSTREAMER_INPUT_USB="input_uvc.so"
-MJPGSTREAMER_INPUT_RASPICAM="input_raspicam.so"
+MJPGSTREAMER_INPUT_RASPICAM="input_uvc.so"
 
 brokenfps_usb_devices=("046d:082b" "1908:2310" "0458:708c" "1e4e:0102" "0471:0311" "038f:6001" "046d:0804" "046d:0825" "046d:0994" "0ac8:3450")
 
@@ -216,7 +216,7 @@ while true; do
   video_devices=($(find /dev -regextype sed -regex '\/dev/video[0-9]\+' | sort -nk1.11 2> /dev/null))
 
   # add list of raspi camera into an array
-  if [ "`vcgencmd get_camera`" = "supported=1 detected=1" ]; then
+  if [[ "`vcgencmd get_camera`" == *"supported=1 detected=1"* ]]; then
     video_devices+=( "raspi" )
   fi
 
