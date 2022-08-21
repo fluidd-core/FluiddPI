@@ -1,7 +1,8 @@
 src/config.local
 src/custompios_path
-src/image/*.zip
-src/image-variants/*.zip
+src/image
+src/image-*
+!src/image/README
 **/key.json
 src/nightly_build_scripts/index.html
 src/nightly_build_scripts/node_modules
