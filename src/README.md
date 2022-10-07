@@ -1,4 +1,4 @@
-# FluidPI src
+# FluiddPI source
 
 Build FluiddPI From within FluiddPI / OctoPi / Raspberry Pi OS / Debian / Ubuntu.
 
