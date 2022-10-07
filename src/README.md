@@ -1,6 +1,6 @@
 # FluiddPI source
 
-Build FluiddPI From within FluiddPI / OctoPi / Raspberry Pi OS / Debian / Ubuntu.
+Build FluiddPI from within FluiddPI / OctoPi / Raspberry Pi OS / Debian / Ubuntu.
 
 ## Build
 FluiddPI can be built from Debian, Ubuntu, Raspberry Pi OS, OctoPi, or even FluiddPI. Build requires about 5 GB of free space available. You can build it by issuing the following commands:
