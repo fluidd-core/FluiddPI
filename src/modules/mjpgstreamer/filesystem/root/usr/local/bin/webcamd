@@ -214,10 +214,27 @@ while true; do
 
   # get list of usb video devices into an array
   video_devices=($(find /dev -regextype sed -regex '\/dev/video[0-9]\+' | sort -nk1.11 2> /dev/null))
-
-  # add list of raspi camera into an array
-  if [ "`vcgencmd get_camera`" = "supported=1 detected=1" ]; then
-    video_devices+=( "raspi" )
+  
+  # check for raspi camera in auto and raspi mode
+  if [[ $camera == "raspi" ]] || [[ $camera == "auto" ]]; then
+    # get camera status
+    raspistatus=`vcgencmd get_camera`
+    # check if supported
+    if [[ $raspistatus != *"supported=1"* ]]; then
+      # only scream if raspi is choosen directly
+      if [[ $camera == "raspi" ]]; then
+        echo "The system reported that raspi is not supported. Please check your configuration and webcam.txt file."
+      fi
+    # check if detected
+    elif [[ $raspistatus != *"detected=1"* ]]; then
+      # only scream if raspi is choosen directly
+      if [[ $camera == "raspi" ]]; then
+        echo "The system reported that raspi was not detected. Please check the connection and legacy camera mode in raspi-config."
+      fi
+    else
+      # add to list
+      video_devices+=( "raspi" )
+    fi
   fi
 
   echo "Found video devices:"
