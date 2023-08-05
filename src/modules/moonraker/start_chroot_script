@@ -17,6 +17,11 @@ install_cleanup_trap
 unpack /filesystem/home/pi /home/pi pi
 unpack /filesystem/root /
 
+if [ -f /etc/armbian-release ]; then
+  echo "pi ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pi-moonraker-install
+  chmod 0440 /etc/sudoers.d/pi-moonraker-install
+fi
+
 echo "Installing Moonraker"
 
 apt update
