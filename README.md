@@ -4,7 +4,9 @@ A pi image with Klipper, Moonraker and Fluidd pre-installed.
 
 This repository contains the necessary code to generate the distribution from an existing Raspberry Pi OS lite distro image.
 
-## ⚠️ WARNING ⚠️
+## Deprecated
+
+⚠️ WARNING ⚠️
 
 FluiddPI is not under active maintenance and we’ve had reports from users finding issues while using it.
 
